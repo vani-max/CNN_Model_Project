@@ -1,4 +1,4 @@
-# CNN on CIFAR-10 — Stage 2A Mini Technical Challenge
+# CNN on CIFAR-10
 
 This repository contains my submission for **Stage 2A of the AI Studio Selection Process**.  
 The objective was to train a small CNN (or comparable baseline) on a subset of the CIFAR-10 dataset and document the experimentation process, observations, and reasoning rather than optimizing purely for accuracy.
@@ -65,3 +65,25 @@ These curves were used to reason about overfitting, stability, and generalizatio
 
 This project prioritizes **learning, experimentation, and reasoning** over leaderboard-style optimization.  
 Failed or suboptimal experiments are intentionally documented as part of the learning process.
+
+
+# CNN Grad-CAM Interpretability Demo
+
+A Streamlit-based web application that visualizes Convolutional Neural Network (CNN) decision-making using Grad-CAM. This project helps demystify "black-box" models by generating heatmaps that highlight the image regions most influential to the model's classification.
+
+## Features
+- **Interactive Interface**: Upload custom images for real-time classification.
+- **Grad-CAM Visualization**: Generates heatmaps highlighting feature importance.
+- **Explainability**: Provides technical insights into how the model perceives the input data.
+
+## Project Structure
+- `app.py`: The Streamlit web application UI.
+- `model_utils.py`: Contains the core Grad-CAM logic.
+- `saved_model.keras`: The serialized Keras model.
+- `requirements.txt`: Project dependencies.
+
+## Installation
+1. Clone the repo: `git clone https://github.com/vani-max/CNN_Model_Project.git`
+2. Create a virtual environment: `python -m venv venv`
+3. Install dependencies: `pip install -r requirements.txt`
+4. Run the app: `streamlit run app.py`
