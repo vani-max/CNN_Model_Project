@@ -39,7 +39,7 @@ if uploaded_file is not None:
     img_array = np.expand_dims(img_array, axis=0)
     
     # Generate Heatmap
-    heatmap = get_gradcam_ultra_manual(img_array, model, 'conv2d_4')
+    heatmap = get_gradcam_ultra_manual(img_array, model, 'conv2d_1')
     
     # Display
     col1, col2 = st.columns(2)
