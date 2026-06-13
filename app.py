@@ -9,7 +9,7 @@ from tensorflow.keras import layers, models
 def load_model():
     # Ensure the weights file is in the same directory as app.py
     model = create_model() 
-    model.load_weights('model_weights.h5')
+    model.load_weights('model_weights.weights.h5')
     return model
     
 model = load_model()
