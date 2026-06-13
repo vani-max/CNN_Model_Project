@@ -3,36 +3,16 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 from model_utils import get_gradcam_ultra_manual
-
-# 1. Load your model once (cached)
-import tensorflow as tf
 from tensorflow.keras import layers, models
-
-# Define the architecture exactly as you did in Colab
-def create_model():
-    model = models.Sequential([
-        # Add your layers here exactly as they were in Colab
-        layers.Conv2D(32, (3,3), padding='same', activation='relu', input_shape=(32,32,3)),
-        layers.BatchNormalization(),
-        layers.MaxPooling2D((2,2)),
-        layers.Conv2D(64, (3,3), padding='same', activation='relu'),
-        layers.BatchNormalization(),
-        layers.MaxPooling2D((2,2)),
-        layers.Flatten(),
-        layers.Dense(128, activation='relu'),
-        layers.BatchNormalization(),
-        layers.Dropout(0.5),
-        layers.Dense(10, activation='softmax')
-    ])
-    return model
 
 @st.cache_resource
 def load_model():
-    model = create_model()
-    # Load only the weights
-    model.load_weights('model_weights.weights.h5') 
+    # Ensure the weights file is in the same directory as app.py
+    model = create_model() 
+    model.load_weights('model_weights.h5')
     return model
-
+    
+model = load_model()
 st.title("Grad-CAM Interpretability Demo")
 
 # 2. File Uploader
