@@ -26,6 +26,7 @@ def load_model():
     return model
     
 model = load_model()
+st.write([layer.name for layer in model.layers])
 st.title("Grad-CAM Interpretability Demo")
 
 # 2. File Uploader
