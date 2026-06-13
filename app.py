@@ -30,7 +30,7 @@ def create_model():
 def load_model():
     model = create_model()
     # Load only the weights
-    model.load_weights('model_weights.h5') 
+    model.load_weights('model_weights.weights.h5') 
     return model
 
 st.title("Grad-CAM Interpretability Demo")
