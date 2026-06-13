@@ -5,6 +5,19 @@ import matplotlib.pyplot as plt
 from model_utils import get_gradcam_ultra_manual
 from tensorflow.keras import layers, models
 
+def create_model():
+    # Replace this with the ACTUAL layers from your Colab training
+    model = models.Sequential([
+        layers.Conv2D(32, (3,3), padding='same', activation='relu', input_shape=(32,32,3)),
+        layers.MaxPooling2D((2,2)),
+        layers.Conv2D(64, (3,3), padding='same', activation='relu'),
+        layers.MaxPooling2D((2,2)),
+        layers.Flatten(),
+        layers.Dense(128, activation='relu'),
+        layers.Dense(10, activation='softmax')
+    ])
+    return model
+
 @st.cache_resource
 def load_model():
     # Ensure the weights file is in the same directory as app.py
